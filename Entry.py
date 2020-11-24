@@ -12,9 +12,10 @@ Now everytime you login you will have a second layer of protection.
 import os
 from time import sleep
 
+# user configuration 
 chances = 3
 password = 'password'
-
+# end user configuration
 
 class Entry:
     def __init__(self, pword, attempts=3):
@@ -31,10 +32,12 @@ class Entry:
 
         print('Exceeded number of attempts')
         sleep(3)
-        # kills ALL open ssh processes
+
+        # kills ALL open ssh processes running on host/server machine
         os.popen('pkill ssh')
 
 
+# program execution
 run = Entry(password, chances)
 run.attempt()
 
