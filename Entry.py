@@ -28,6 +28,8 @@ class Entry:
             if entry != self.password:
                 self.chances -= 1
             else:
+                print('Welcome')
+                sleep(1.5)
                 return
 
         print('Exceeded number of attempts')
