@@ -1,14 +1,3 @@
-"""
-This is to create an extra layer of security for SSH logins.
-
-Add your unique password and number of attempts to this file (default is 3).
-Save it, then enter `python3 ssh_verification.py` onto
-the final line of `~/.bashrc`.
-
-Now everytime you login you will have a second layer of protection.
-
-"""
-
 from os import popen
 from time import sleep
 
@@ -16,6 +5,7 @@ from time import sleep
 chances = 3
 password = 'password'
 # end user configuration
+
 
 class Entry:
     def __init__(self, pword, attempts=3):
@@ -42,3 +32,4 @@ class Entry:
 # program execution
 run = Entry(password, chances)
 run.attempt()
+
